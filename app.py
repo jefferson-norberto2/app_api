@@ -107,7 +107,7 @@ class AppApi:
 
         self.create_tables()
         try:
-            self._app.run(debug=True)
+            self._app.run(host='192.168.1.72', port=5000, debug=True)
         except Exception as e:
             print(e)
 
