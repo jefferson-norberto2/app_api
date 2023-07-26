@@ -1,13 +1,22 @@
 class PetEntity:
-    def __init__(self, pet_name, pet_type, size, color, breed, age, user, pet_id):
+    def __init__(self, id, pet_name, pet_type, size, color, breed, age, user, pet_id):
+        self.id = id
         self.pet_name = pet_name
-        self.type = pet_type
+        self.pet_type = pet_type
         self.size = size
         self.color = color
         self.breed = breed
         self.age = age
         self.user = user
         self.pet_id = pet_id
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        self._id = id
 
     @property
     def pet_name(self):
@@ -21,7 +30,7 @@ class PetEntity:
     def pet_type(self):
         return self._pet_type
 
-    @type.setter
+    @pet_type.setter
     def pet_type(self, pet_type):
         self._pet_type = pet_type
 
@@ -72,4 +81,3 @@ class PetEntity:
     @pet_id.setter
     def pet_id(self, pet_id):
         self._pet_id = pet_id
-
