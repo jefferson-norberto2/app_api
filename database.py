@@ -16,8 +16,8 @@ class Database:
         self._cursor.execute(query)
         return self._cursor.fetchall()
     
-    def fetch_one(self, query, values):
-        self._cursor.execute(query, values)
+    def fetch_one(self, query, values=None):
+        self.execute_query(query, values)
         return self._cursor.fetchone()
     
     def close_connection(self):
